@@ -1,0 +1,153 @@
+html { height: 100%; }
+
+body {
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#frame {
+	background-image: url('./curry.png');
+	background-size: contain;
+	width: 1438px / 2;
+	height: 1288px / 2;
+	position: relative;
+}
+
+#portrait {
+	position: absolute;
+	width: 230px;
+	height: 300px;
+	left: 50px;
+	top: 65px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: none;
+	&:hover { background-color: white; }
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.marugothic() {
+	font-family: 'tbudrgothic-std';
+	font-weight: 900;
+}
+
+#name-container {
+	.marugothic();
+	position: absolute;
+	left: 40px;
+	top: 365px;
+	width: 270px;
+	font-size: 18px;
+	text-align: center;
+	#name {
+		&:hover, &:active { background: white; }
+	}
+	#type {
+		cursor: pointer;
+		&:hover { background: white; }
+	}
+	.deco(@col) {
+		#name {
+			color: white;
+			text-shadow:
+				1px 1px 0 @col,
+				-1px 1px 0 @col,
+				1px -1px 0 @col,
+				-1px -1px 0 @col,
+				0px 1px 0 @col,
+				0px -1px 0 @col,
+				-1px 0px 0 @col,
+				1px 0px 0 @col,
+				2px 2px 0 @col,
+				-2px 2px 0 @col,
+				2px -2px 0 @col,
+				-2px -2px 0 @col,
+				0px 2px 0 @col,
+				0px -2px 0 @col,
+				-2px 0px 0 @col,
+				2px 0px 0 @col,
+				1px 2px 0 @col,
+				-1px 2px 0 @col,
+				1px -2px 0 @col,
+				-1px -2px 0 @col,
+				2px 1px 0 @col,
+				-2px 1px 0 @col,
+				2px -1px 0 @col,
+				-2px -1px 0 @col;
+		}
+		#type {
+			color: @col;
+			margin-left: 10px;
+			font-size: 90%;
+		}
+	}
+
+	&.cute { .deco(#e4007f); }
+	&.cool { .deco(#056eb8); }
+	&.passion { .deco(#f39800); }
+}
+
+.input() {
+	background: none;
+	// border: 1px solid orange;
+	border: none;
+	&:hover, &:focus { background-color: white; }
+}
+
+.profile {
+	.input();
+	.marugothic();
+	position: absolute;
+	left: 400px;
+	width: 280px;
+	height: 25px;
+	font-size: 14px;
+}
+
+.profile-right() { left: 600px; .profile-short; }
+.profile-short() { width: 80px; }
+
+.profpos(@index) {
+	top: 68px + 34px * @index;
+}
+
+#furigana { .profpos(0); }
+#height { .profpos(1); .profile-short; }
+#age { .profpos(1); .profile-right;}
+#weight { .profpos(2); .profile-short; }
+#dob { .profpos(2); .profile-right; }
+#blood { .profpos(3); .profile-short; }
+#hand { .profpos(3); .profile-right; }
+#three { .profpos(4); }
+#stellar { .profpos(5); }
+#birthplace { .profpos(6); }
+#hobby { .profpos(7); }
+#cv { .profpos(8); }
+
+#comment-container {
+	position: absolute;
+	left: 100px;
+	top: 420px;
+	width: 430px;
+	height: 120px;
+	display: flex;
+	align-items: center;
+}
+
+#comment {
+	.input();
+	.marugothic();
+	width: 100%;
+	font-size: 14px;
+	line-height: 20px;
+	height: 45px;
+	resize: none;
+}
+
+#file-selector {
+	display: none;
+}

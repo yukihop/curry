@@ -1,0 +1,32 @@
+html
+    head
+        title Idol Curry Generator
+        link(rel='stylesheet', href='curry.css')
+    body
+        #frame
+            div#portrait
+            #name-container.cute
+                span#name(contenteditable='true') 島村卯月
+                span#type ＜Cute＞
+            input.profile#furigana(value='しまむらうづき')
+            input.profile#height(value='159cm')
+            input.profile#age(value='17歳')
+            input.profile#weight(value='44kg')
+            input.profile#dob(value='4月24日')
+            input.profile#blood(value='O')
+            input.profile#hand(value='右')
+            input.profile#three(value='83/58/87')
+            input.profile#stellar(value='牡牛座')
+            input.profile#birthplace(value='東京')
+            input.profile#hobby(value='友達と長電話')
+            input.profile#cv(value='大橋彩香')
+            #comment-container
+                textarea#comment
+                    | あいうえお
+                    | かきくけこ
+
+        input(type='file')#file-selector
+
+        script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+        script(src='https://use.typekit.net/rvo8koj.js')
+        script(src='curry.js')
