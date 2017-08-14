@@ -1,16 +1,16 @@
-const $$ = document.getElementById.bind(document);
+var $$ = document.getElementById.bind(document);
 
-const comment = $$('comment');
-comment.addEventListener('input', () => {
+var comment = $$('comment');
+comment.addEventListener('input', function() {
 	comment.style.height = '1px';
 	comment.style.height = (2 + comment.scrollHeight) + 'px';
 });
 
-const type = $$('type');
-type.addEventListener('click', () => {
-	const current = type.innerHTML;
-	let next = '＜Cute＞';
-	let nextClass = 'cute';
+var type = $$('type');
+type.addEventListener('click', function() {
+	var current = type.innerHTML;
+	var next = '＜Cute＞';
+	var nextClass = 'cute';
 	if (current.match(/Cute/i)) {
 		next = '＜Cool＞';
 		nextClass = 'cool';
@@ -23,15 +23,15 @@ type.addEventListener('click', () => {
 	$$('name-container').className = nextClass;
 });
 
-$$('portrait').addEventListener('click', () => {
+$$('portrait').addEventListener('click', function() {
 	$$('file-selector').click();
 });
 
-const selector = $$('file-selector');
-selector.addEventListener('change', () => {
+var selector = $$('file-selector');
+selector.addEventListener('change', function() {
 	const reader = new FileReader();
-	reader.onload = ev => {
-		$$('portrait').style.backgroundImage = `url(${ev.target.result})`;
+	reader.onload = function(ev) {
+		$$('portrait').style.backgroundImage = 'url(' + ev.target.result + ')';
 	};
 	reader.readAsDataURL(selector.files[0]);
 });
