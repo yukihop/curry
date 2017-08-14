@@ -1,44 +1,49 @@
 const $comment = $('#comment');
 
-let edited = false;
+const $$ = document.getElementById.bind(document);
 
-$comment.on('input', ev => {
-	const t = ev.target;
-	t.style.height = '1px';
-	t.style.height = (2 + t.scrollHeight) + 'px';
+const comment = $$('comment');
+
+comment.addEventListener('input', () => {
+	comment.style.height = '1px';
+	comment.style.height = (2 + comment.scrollHeight) + 'px';
 });
 
-const $type = $('#type');
+const type = $$('type');
 
-$type.on('click', () => {
+type.addEventListener('click', () => {
+	const current = type.innerHTML;
 	let next = '＜Cute＞';
 	let nextClass = 'cute';
-	if ($type.text().match(/Cute/i)) {
+	if (type.innerHTML.match(/Cute/i)) {
 		next = '＜Cool＞';
 		nextClass = 'cool';
 	}
-	if ($type.text().match(/Cool/i)) {
+	if (type.innerHTML.match(/Cool/i)) {
 		next = '＜Passion＞';
 		nextClass = 'passion';
 	}
-	$type.text(next);
-	$('#name-container').removeClass('cute cool passion').addClass(nextClass);
+	type.innerHTML = next;
+	$$('name-container').className = nextClass;
 });
 
-$('body').on('input', () => edited = true);
-
-$('#portrait').on('click', () => {
-	$('#file-selector').click();
+document.body.addEventListener('focusout', () => {
+	loadFont();
+	console.log('pinya');
 });
 
-const $selector = $('#file-selector');
+$$('portrait').addEventListener('click', () => {
+	$$('file-selector').click();
+});
 
-$selector.on('change', () => {
+const selector = $$('file-selector');
+
+selector.addEventListener('change', () => {
 	const reader = new FileReader();
 	reader.onload = (e) => {
-		$('#portrait').css('background-image', `url(${e.target.result})`);
+		$$('portrait').style.backgroundImage = `url(${e.target.result})`;
 	};
-	reader.readAsDataURL($selector.get(0).files[0]);
+	reader.readAsDataURL(selector.files[0]);
 });
 
 function loadFont() {
@@ -48,10 +53,3 @@ function loadFont() {
 }
 
 loadFont();
-
-setInterval(() => {
-	if (edited) {
-		edited = false;
-		loadFont();
-	}
-}, 2000);
