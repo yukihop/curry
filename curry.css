@@ -29,6 +29,9 @@ body {
 #portrait:hover {
   background-color: gold;
 }
+#help {
+  list-style-type: none;
+}
 #name-container {
   font-family: 'tbudrgothic-std';
   font-weight: 900;
