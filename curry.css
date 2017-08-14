@@ -150,6 +150,7 @@ body {
   border: none;
   font-family: 'tbudrgothic-std';
   font-weight: 900;
+  overflow: auto;
   width: 100%;
   font-size: 14px;
   line-height: 20px;
