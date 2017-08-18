@@ -39,6 +39,8 @@ body {
 
 #name-container {
 	.marugothic();
+	display: flex;
+	justify-content: center;
 	position: absolute;
 	left: 40px;
 	top: 365px;
@@ -46,9 +48,13 @@ body {
 	font-size: 18px;
 	text-align: center;
 	#name {
+		display: inline-block;
+		flex-shrink: 0;
 		&:hover, &:active { background: white; }
 	}
 	#type {
+		display: inline-block;
+		flex-shrink: 0;
 		cursor: pointer;
 		&:hover { background: white; }
 	}
@@ -95,8 +101,6 @@ body {
 
 .input() {
 	background: none;
-	// border: 1px solid orange;
-	border: none;
 	&:hover, &:focus { background-color: white; }
 }
 
@@ -143,6 +147,7 @@ body {
 #comment {
 	.input();
 	.marugothic();
+	border: none;
 	overflow: auto;
 	width: 100%;
 	font-size: 14px;

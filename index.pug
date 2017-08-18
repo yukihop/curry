@@ -5,7 +5,7 @@ html
         meta(charset='UTF-8')
 
     mixin profile(id, value)
-        span.profile(id=id, contenteditable='true')= value
+        span.profile(id=id, contenteditable='true', tabindex='0')= value
 
     body
         img(alt='コラボメシジェネレーター', src='logo.svg', width='400')

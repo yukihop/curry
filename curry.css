@@ -35,6 +35,8 @@ body {
 #name-container {
   font-family: 'tbudrgothic-std';
   font-weight: 900;
+  display: flex;
+  justify-content: center;
   position: absolute;
   left: 40px;
   top: 365px;
@@ -42,11 +44,17 @@ body {
   font-size: 18px;
   text-align: center;
 }
+#name-container #name {
+  display: inline-block;
+  flex-shrink: 0;
+}
 #name-container #name:hover,
 #name-container #name:active {
   background: white;
 }
 #name-container #type {
+  display: inline-block;
+  flex-shrink: 0;
   cursor: pointer;
 }
 #name-container #type:hover {
@@ -81,7 +89,6 @@ body {
 }
 .profile {
   background: none;
-  border: none;
   font-family: 'tbudrgothic-std';
   font-weight: 900;
   position: absolute;
@@ -150,9 +157,9 @@ body {
 }
 #comment {
   background: none;
-  border: none;
   font-family: 'tbudrgothic-std';
   font-weight: 900;
+  border: none;
   overflow: auto;
   width: 100%;
   font-size: 14px;
