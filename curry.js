@@ -36,7 +36,7 @@ selector.addEventListener('change', function() {
 	reader.readAsDataURL(selector.files[0]);
 });
 
-document.body.addEventListener('focusout', loadFont);
+// document.body.addEventListener('focusout', loadFont);
 
 function loadFont() {
 	try{

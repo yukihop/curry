@@ -4,6 +4,9 @@ html
         link(rel='stylesheet', href='curry.css')
         meta(charset='UTF-8')
 
+    mixin profile(id, value)
+        span.profile(id=id, contenteditable='true')= value
+
     body
         img(alt='コラボメシジェネレーター', src='logo.svg', width='400')
         #frame
@@ -11,18 +14,18 @@ html
             #name-container.cute
                 span#name(contenteditable='true') 島村卯月
                 span#type ＜Cute＞
-            input.profile#furigana(value='しまむらうづき')
-            input.profile#height(value='159cm')
-            input.profile#age(value='17歳')
-            input.profile#weight(value='44kg')
-            input.profile#dob(value='4月24日')
-            input.profile#blood(value='O')
-            input.profile#hand(value='右')
-            input.profile#three(value='83/58/87')
-            input.profile#stellar(value='牡牛座')
-            input.profile#birthplace(value='東京')
-            input.profile#hobby(value='友達と長電話')
-            input.profile#cv(value='大橋彩香')
+            +profile('furigana', 'しまむらうづき')
+            +profile('height', '159cm')
+            +profile('age', '17歳')
+            +profile('weight', '44kg')
+            +profile('dob', '4月24日')
+            +profile('blood', 'O')
+            +profile('hand', '右')
+            +profile('three', '83/58/87')
+            +profile('stellar', '牡牛座')
+            +profile('birthplace', '東京')
+            +profile('hobby', '友達と長電話')
+            +profile('cv', '大橋彩香')
             #comment-container
                 textarea#comment
                     | コメント欄は５行くらいまで
